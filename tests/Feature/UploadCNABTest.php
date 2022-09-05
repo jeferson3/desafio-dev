@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 
 class UploadCNABTest extends TestCase
@@ -28,11 +29,13 @@ class UploadCNABTest extends TestCase
      */
     public function test_envio_arquivo_formulario()
     {
-        $response = $this->post('/');
-
-        $response->assertStatus(200);
+        $response = $this->post('/', [
+            'file' => new UploadedFile(public_path() . '/CNAB.txt', 'CNAB.txt')
+        ]
+        );
+        $response->assertStatus(201);
         $response->assertRedirect('/');
-        $response->assertViewHas('message', 'sucesso');
+        $response->assertViewHas('message', 'Success!');
     }
 
 }
