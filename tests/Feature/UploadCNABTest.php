@@ -18,9 +18,8 @@ class UploadCNABTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSeeTextInOrder([
-            '<form method="post" enctype="multipart/form-data">',
-            '<input type="file" class="upload">',
-            '</form>'
-        ], false);
+            'Formulário Upload',
+            'Enviar'
+        ]);
     }
 }
