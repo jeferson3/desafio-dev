@@ -17,6 +17,7 @@
         <div class="container">
             <h1>Formulário Upload</h1>
             <form method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                     <input type="file" class="upload">
                 </div>
