@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class StoreFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +15,8 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'cpf'  => $this->faker->cpf(false)
+            'name'       => $this->faker->userName(),
+            'owner_name' => $this->faker->name()
         ];
     }
 
