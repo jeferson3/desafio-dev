@@ -18,6 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('store_id');
             $table->decimal('value', 10, 2);
+            $table->string('card_number', 12);
             $table->enum('type', [
                 'Débito',
                 'Boleto',
