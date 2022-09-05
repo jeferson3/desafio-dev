@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class User extends Model
+class Store extends Model
 {
     use HasFactory;
 
@@ -17,7 +17,7 @@ class User extends Model
      */
     protected $fillable = [
         'name',
-        'cpf',
+        'owner_name',
     ];
 
     /**
@@ -32,7 +32,7 @@ class User extends Model
      */
     public function Transactions(): BelongsToMany
     {
-        return $this->belongsToMany(Store::class, 'transactions');
+        return $this->belongsToMany(User::class, 'transactions');
     }
 
 }
