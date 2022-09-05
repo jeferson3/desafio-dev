@@ -19,7 +19,7 @@
             <form method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                    <input type="file" class="upload">
+                    <input type="file" name="file" class="upload">
                 </div>
                 <button type="submit" class="btn font-semibold">Enviar</button>
             </form>
