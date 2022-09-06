@@ -14,9 +14,22 @@ body {
     width: 100%;
     padding: 10px 20px;
     margin: 10px 0;
+    cursor: pointer;
+    background-color: lightgreen;
 }
 
 .upload {
     padding: 20px;
     border: gray dashed;
 }
+
+.alert {
+    width: 100%;
+    display: block;
+    padding: 20px;
+    margin: 0;
+}
+.alert-message {
+    background-color: lightgray;
+}
+
