@@ -15,6 +15,7 @@ class TransactionListResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'  => $this->resource['pivot']["id"],
             'customer' => [
                 'cpf'  => $this->resource["cpf"],
                 'name' => $this->resource["name"] ?? 'empty name',

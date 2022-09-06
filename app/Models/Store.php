@@ -33,7 +33,7 @@ class Store extends Model
     public function Transactions(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'transactions')
-            ->withPivot('value', 'card_number', 'type', 'date', 'time');
+            ->withPivot('id', 'value', 'card_number', 'type', 'date', 'time');
     }
 
 }

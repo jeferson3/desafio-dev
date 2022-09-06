@@ -14,17 +14,15 @@ class StoreListResource extends JsonResource
      */
     public function toArray($request)
     {
-//        dd(
-//            $this->resource
-//        );
         return [
-                "store"         => $this->resource['name'],
-                "owner_name"    => $this->resource['owner_name'],
-                'transactions'  => [
-                    'qtd'       => $this->resource['transactions_count'],
-                    'total'     => 'R$ ' . number_format($this->resource['transactions_sum_transactionsvalue'], 2, ',', '.'),
-                    'history'   => TransactionListResource::collection($this->resource['transactions'])
-                ],
+            'id'            => $this->resource['id'],
+            "store"         => $this->resource['name'],
+            "owner_name"    => $this->resource['owner_name'],
+            'transactions'  => [
+                'qtd'       => $this->resource['transactions_count'],
+                'total'     => 'R$ ' . number_format($this->resource['transactions_sum_transactionsvalue'], 2, ',', '.'),
+                'history'   => TransactionListResource::collection($this->resource['transactions'])
+            ],
         ];
     }
 }
