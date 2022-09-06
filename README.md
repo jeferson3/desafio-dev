@@ -13,7 +13,7 @@ https://github.com/jeferson3/desafio-dev.git
 #-- Instalar depências --# 
 composer install
 
-#-- Criar .env a partir do env.example e alterar o nome do banco de dados DB_DATABASE --# 
+#-- Criar .env a partir do env.example e alterar as credenciais do banco de dados --# 
 cp .env.example .env
 
 #-- Migrations - banco de dados --# 
