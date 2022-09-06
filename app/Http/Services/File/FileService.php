@@ -50,7 +50,7 @@ class FileService implements FileServiceInterface
                 }
 
                 $user->Transactions()->attach($store->id, [
-                    'value'         => $line->value,
+                    'value'         => $this->verifyValue($line->value, $line->type),
                     'card_number'   => $line->card,
                     'type'          => $line->type,
                     'date'          => $line->date,
@@ -108,5 +108,18 @@ class FileService implements FileServiceInterface
             case 9:	return 'Aluguel';
             default: return null;
         }
+    }
+
+    /**
+     * Função para retornar o valor de acordo com o tipo da transação
+     *
+     * @param int $number
+     * @param string $type
+     * @return int
+     */
+    private function verifyValue(int $number, string $type): int
+    {
+        if ($type === 'Boleto' || $type === 'Financiamento' || $type === 'Aluguel') return $number * -1;
+        return $number;
     }
 }
