@@ -17,7 +17,7 @@ class User extends Model
      */
     protected $fillable = [
         'name',
-        'cpf',
+        'cpf'
     ];
 
     /**
@@ -32,7 +32,8 @@ class User extends Model
      */
     public function Transactions(): BelongsToMany
     {
-        return $this->belongsToMany(Store::class, 'transactions');
+        return $this->belongsToMany(Store::class, 'transactions')
+            ->withPivot('value', 'card_number', 'type', 'date', 'time');
     }
 
 }
