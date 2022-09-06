@@ -25,6 +25,9 @@ php artisan key:generate
 #-- Gerar documentação --# 
 php artisan l5-swagger:generate
 
+#-- Rodar os testes automatizados --# 
+php artisan test
+
 #-- Iniciar servidor --# 
 php artisan serve
 
