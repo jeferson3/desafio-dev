@@ -33,3 +33,14 @@ php artisan serve
 
 ```
 
+## Acessar documentação API
+[http://localhost:8000/api/documentation](http://localhost:8000/api/documentation)
+
+
+## Uso da documentação
+- Clicar no endpoint
+- Clicar para expandir 
+- Clicar em "Try it out"
+- Inserir valores nos parâmetros (opcional)
+- Clicar em executar
+- Verificar a resposta
